@@ -1,0 +1,48 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 91vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.wrapper {
+  height: 100vh;
+  background-color: #EFEDE8;
+
+}
+
+.form-sign {
+  width: 50vw;
+  padding: 1px 10px;
+  justify-content: center;
+  height: 95vh;
+  text-position: center;
+}
+
+.wrapper-sign {
+  background-color: #D6D6CE;
+  border-radius: 10px;
+  opacity: .4px;
+  width: 50vw;
+  width: 50vw;
+  justify-content: center;
+  margin-left: 24%;
+  height: 95vh;
+
+}

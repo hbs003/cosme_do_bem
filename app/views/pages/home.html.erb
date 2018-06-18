@@ -1,2 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-body">
+ <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://islamicfocus.co.za/wp-content/uploads/2018/03/green-660x400.jpg');">
+    <div class="banner-content">
+      <h1>Mercado do Bem</h1>
+      <p>Beleza e Saúde em Harmonia</p>
+    </div>
+  </div>
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <% @products.each do |product| %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @product.photo %>');">
+              <div class="card-category"><%= product.category %></div>
+              <div class="card-description">
+                <h2><%= product.name %></h2>
+                <p><%= product.price %></p>
+                <p><%= product.quantity %></p>
+              </div>
+              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
