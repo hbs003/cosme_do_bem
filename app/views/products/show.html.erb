@@ -1,36 +1,22 @@
-<div class="page-content" style="position: relative; margin-top: 202px;">
-  <% if @product.photo? %>
-    <div class="banner banner-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.4) 50%), url('<%= cl_image_path @product.photo %>');">
-  <% else %>
-    <div class="banner banner-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.4) 50%), url('<%= image_path("example.jpeg")%>');">
-  <% end %>
-    <div class="container" style="width: 100%; height: 198px;position: absolute; position: absolute; top: 30px; right: 0pxç;">
-    <div class="row" style="display: flex;">
-      <div class="col-xs-8">
-        <div class="boxes" id="formulaire" style="border-radius: 20px;background-color: rgba(255, 255, 255, 0.6); color: black;"">
-          <div class="banner-content uptext">
-            <hr>
-            <h4>Informação do produto:</h4>
-            <p>Produto: <%= @product.name %> </p>
-            <p>Quantidade <%= @product.quantity %> </p>
-            <p>Categoria: <%= @product.category %> </p>
-            <p>Preço: R$<%= @product.price %> </p>
-            <hr>
-            <div class="buttons">
-              <% if current_user = @product.user_id %>
-                <% if policy(@product).edit? %>
-                  <div class="buttons">
-                    <%= link_to "Update", edit_product_path(@product) %>
-                    <%= link_to "Delete", product_path(@product), method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
-            <hr>
-          </div>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1><%= @product.name %></h1>
     </div>
   </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <%= image_tag(@product.photo, width: '100%') %>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <p>Some awesome description of our amazing product.</p>
+      <<p>Preço: <%= humanized_money_with_symbol(@product.price) %></p>
+    </div>
+  </div>
+  <%= form_tag orders_path do %>
+    <%= hidden_field_tag 'product_id', @product.id %>
+    <%= submit_tag 'Comprar', class: 'btn btn-primary' %>
+  <% end %>
 </div>
 
 

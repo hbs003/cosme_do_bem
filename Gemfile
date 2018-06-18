@@ -19,6 +19,8 @@ gem 'webpacker'
 
 # gems added
 gem 'devise'
+gem 'money-rails'
+gem 'stripe'
 
 
 group :development do

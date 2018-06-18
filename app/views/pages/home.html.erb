@@ -5,23 +5,21 @@
       <p>Beleza e Saúde em Harmonia</p>
     </div>
   </div>
-  <div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <% @products.each do |product| %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @product.photo %>');">
-              <div class="card-category"><%= product.category %></div>
-              <div class="card-description">
-                <h2><%= product.name %></h2>
-                <p><%= product.price %></p>
-                <p><%= product.quantity %></p>
-              </div>
-              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+  <div class="container">
+    <div class="row">
+      <h1>Produtos</h1>
+      <% @products.each do |product| %>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <%= link_to image_tag(product.photo), product_path(product) %>
+            <div class="caption">
+              <h3><%= link_to product.name, product_path(product) %></h3>
+              <p><%= product.category.name %></p>
+              <p>Preço: <%= humanized_money_with_symbol(product.price) %></p>
             </div>
-          <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
