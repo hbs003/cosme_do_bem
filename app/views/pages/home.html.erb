@@ -3,6 +3,13 @@
     <div class="banner-content">
       <h1>Mercado do Bem</h1>
       <p>Beleza e Saúde em Harmonia</p>
+      <%= form_tag root_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Encontre seu cosmético do bem"
+        %>
+      <% end %>
     </div>
   </div>
   <div class="container">

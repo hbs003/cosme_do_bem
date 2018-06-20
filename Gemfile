@@ -21,6 +21,7 @@ gem 'webpacker'
 gem 'devise'
 gem 'money-rails'
 gem 'stripe'
+gem 'pg_search'
 
 
 group :development do
