@@ -23,6 +23,15 @@ gem 'money-rails'
 gem 'stripe'
 gem 'pg_search'
 
+gem 'activeadmin'
+
+# Plus integrations with:
+gem 'devise'
+gem 'cancan' # or cancancan
+gem 'draper'
+gem 'pundit'
+
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

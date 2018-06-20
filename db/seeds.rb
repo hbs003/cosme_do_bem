@@ -20,3 +20,4 @@ Product.create!(user: hbs, sku: 'jean-mimi', name: 'Jean-Michel - Le Wagon', cat
 Product.create!(user: hbs, sku: 'octocat',   name: 'Octocat -  GitHub',      category: shampoo, quantity: "5", price: 10.50,  photo: 'https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ab4e5ebe73c797be1b90170a242bf113&auto=format&fit=crop&w=500&q=60')
 puts 'Finished!'
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
