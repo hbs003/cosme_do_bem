@@ -6,6 +6,7 @@ class Product < ApplicationRecord
   monetize :price_cents
 
   include PgSearch
+
   pg_search_scope :global_search,
     against: [ :name, :sku ],
     associated_against: {
@@ -14,4 +15,5 @@ class Product < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
 end
